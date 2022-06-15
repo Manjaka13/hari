@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { LazyLoadImage as Image } from "react-lazy-load-image-component";
 import ProfileCard from "./ProfileCard";
 import CoverBottom from "./CoverBottom";
 import CoverQuote from "./CoverQuote";
@@ -10,8 +9,13 @@ import CoverRight from "./CoverRight";
 */
 
 const Cover = () => {
-	const [bgCover, setBgCover] = useState(4);
-	const [bg, setBg] = useState(3);
+	const [bgCover, setBgCover] = useState(3);
+	const bgColors = [
+		"rgb(17, 158, 178)",
+		"rgb(16, 145, 163)",
+		"rgb(233, 84, 12)",
+		"rgb(6, 30, 28)"
+	];
 
 	// Gets current hour as integer
 	const getCurrentHour = () => {
@@ -23,7 +27,7 @@ const Cover = () => {
 		// Changes cover background
 		const changeBgCover = () => {
 			const now = getCurrentHour();
-			const timeLimits = [5, 8, 13, 16, 19];
+			const timeLimits = [5, 8, 16, 19];
 			for (let i = 0, j = 0; i < timeLimits.length - 1; i++, j++) {
 				if (now >= timeLimits[i] && now < timeLimits[i + 1]) {
 					setBgCover(j);
@@ -31,35 +35,18 @@ const Cover = () => {
 				}
 			}
 		};
-		// Changes background
-		const changeBg = () => {
-			const now = getCurrentHour();
-			const timeLimits = [5, 8, 16, 19];
-			for (let i = 0, j = 0; i < timeLimits.length - 1; i++, j++) {
-				if (now >= timeLimits[i] && now < timeLimits[i + 1]) {
-					setBg(j);
-					break;
-				}
-			}
-		};
-		// Checks regularly as time passes
+		// Checks regularly for bg change as time passes
 		const id = setInterval(() => {
 			changeBgCover();
-			changeBg();
 		}, 5000);
 		// Apply current default
 		changeBgCover();
-		changeBg();
 		return () => clearInterval(id);
 	}, []);
 
 	return (
 		<div className="cover w-100 o-h">
-			<Image
-				className="w-100 h-100"
-				alt="Background"
-				src={ `/assets/backgrounds/${bg}.jpg` }
-			/>
+			<div className={ `w-100 h-100 cover__bgcolor--${bgCover}` }></div>
 			<div className="container cover__container h-100">
 				<div className={ `cover__bg--${bgCover} w-100 h-100 f-c-st-st` }>
 					<div className="w-100 h-80 o-h f-r-be-ce">

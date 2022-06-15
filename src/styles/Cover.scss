@@ -40,9 +40,20 @@
 			background: url(../assets/cover/3.jpg) center center no-repeat;
 			background-size: cover;
 		}
-		&--4 {
-			background: url(../assets/cover/4.jpg) center center no-repeat;
-			background-size: cover;
+	}
+
+	&__bgcolor {
+		&--0 {
+			background: rgb(17, 158, 178);
+		}
+		&--1 {
+			background: rgb(16, 145, 163);
+		}
+		&--2 {
+			background: rgb(233, 84, 12);
+		}
+		&--3 {
+			background: rgb(6, 30, 28);
 		}
 	}
 }
