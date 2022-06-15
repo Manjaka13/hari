@@ -88,7 +88,7 @@ const Journey = () => {
 	const mappedJourney = journeyList.map((journey, key) => (
 		<Fragment key={ key }>
 		<JourneyItem
-			className={ allVisible ? "" : (key >= 3 ? "journey-item--invisible" : "") }
+			className={ allVisible ? "" : (key >= 2 ? "journey-item--invisible" : "") }
 			start={ key === 0 }
 			end={ key === journeyList.length - 1 }
 			reversed={ key % 2 === 0 }
