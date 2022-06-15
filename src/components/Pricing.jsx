@@ -11,7 +11,7 @@ import Section from "./Section";
 const offerList = [
 	{
 		name: "Full website",
-		price: "219 €",
+		price: "599 €",
 		description: "This offer is for full multiple page websites, on-demand functionnality and heavy referenced content.",
 		checks: [
 			"Multiple page website",
@@ -21,7 +21,7 @@ const offerList = [
 	},
 	{
 		name: "Single page website",
-		price: "65 €",
+		price: "199 €",
 		description: "One landing page website that is used mainly for business ad, personal biography and local community or organization presentation.",
 		checks: [
 			"A website with modern design",

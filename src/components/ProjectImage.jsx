@@ -12,20 +12,8 @@ const linkList = [
 	{ icon:  ["fas", "link"], title: "View website."},
 	{ icon:  ["fas", "share"], title: "Share this link."}
 ];
-const image = "/assets/projects/Namanagasycar.jpg";
 
-// List of links
-const mappedLinks = linkList.map(link => (
-	<div
-		className="link tr-200 fs-250 mg-r-10 p"
-		title={ link.title }
-		key={ uuidv4() }
-	>
-		<Icon icon={ link.icon } />
-	</div>
-));
-
-const ProjectImage = ({ content }) => {
+const ProjectImage = ({ date, image, links }) => {
 	const ref = useRef(null);
 	const [size, setSize] = useState(0);
 
@@ -35,6 +23,17 @@ const ProjectImage = ({ content }) => {
 		window.addEventListener("resize", updateSize);
 		return () => window.removeEventListener("resize", updateSize);
 	}, []);
+
+	// List of links
+	const mappedLinks = linkList.filter((link, key) => key === 0 && links.github ? true : key === 1 && links.link ? true : false).map(link => (
+		<div
+			className="link tr-200 fs-250 mg-r-10 p"
+			title={ link.title }
+			key={ uuidv4() }
+		>
+			<Icon icon={ link.icon } />
+		</div>
+	));
 
 	return (
 		<div
@@ -53,7 +52,7 @@ const ProjectImage = ({ content }) => {
 						src={ image }
 					/>
 					<p className="text white pd-5 pd-l-10 pd-r-10 br-5">
-						{ content || "" }
+						{ date || "" }
 					</p>
 				</div>
 			</div>
