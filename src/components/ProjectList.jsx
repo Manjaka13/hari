@@ -21,6 +21,39 @@ const projects = [
 			link: "https://namanagasycar.vercel.app"
 		},
 		tag: ["react", "next", "typescript", "sass", "node", "express", "mongo"],
+	},
+	{
+		name: "BobaBee",
+		date: "2021",
+		description: "I were making a template for boba bee, a bubble tee seller. Unfortunately they have money issues and couldn't affort it.",
+		image: "/assets/projects/bobabee.jpg",
+		link: {
+			github: "https://github.com/Manjaka13/bobabee",
+			link: "https://bobabee.vercel.app"
+		},
+		tag: ["react", "next", "typescript", "sass"],
+	},
+	{
+		name: "Tamirah - Fleur de vie",
+		date: "2022",
+		description: "A non caritative association of women that projects many activities to help poor people, the elderly and children.",
+		image: "/assets/projects/tamirah.jpg",
+		link: {
+			github: "https://github.com/Manjaka13/tamirah",
+			link: "https://tamirah.vercel.app"
+		},
+		tag: ["react", "next", "typescript", "sass"],
+	},
+	{
+		name: "Aventure Couture",
+		date: "2020",
+		description: "Part of the french group \"Singer\", selling sewing machines for a very long time in France, they needed a website to advert their products.",
+		image: "/assets/projects/singer.jpg",
+		link: {
+			github: "https://github.com/Manjaka13/singer",
+			link: "https://singer.vercel.app"
+		},
+		tag: ["react", "next", "typescript", "sass"],
 	}
 ];
 
