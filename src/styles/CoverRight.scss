@@ -34,8 +34,15 @@
 	}
 
 	&__link {
+		background: rgba(0, 0, 0, 0.4);
 		border: 3px $color-theme solid;
 		box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
+		&:hover {
+			background: rgba(0, 0, 0, 0.6);
+		}
+		&:active {
+			background: rgba(0, 0, 0, 0.8);
+		}
 		@include screen-x(1100px) {
 			display: none;
 		}

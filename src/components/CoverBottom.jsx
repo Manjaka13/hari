@@ -20,7 +20,7 @@ const socialList = [
 	},
 	{
 		icon: ["fab", "facebook"],
-		link: "https://facebook.com/Manjaka1",
+		link: "https://facebook.com/Manjaka13",
 		title: "Add me on Facebook"
 	},
 	{
